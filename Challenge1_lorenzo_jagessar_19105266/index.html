@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DashboardSpaceXLorenzoJagessar19105266</title>
+        <link rel="stylesheet" href="css/main.css">
+        <script src="script/doughnut.js" defer></script>
+        <script src="script/column.js" defer></script> 
+        <script src="script/line.js" defer></script> 
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> <!--chartjs-->
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <img class="logo" src="pictures/SpaceX-Logo original.svg" alt="logoSpaceX">
+            </header>
+            <div class="ring">
+                <h1 class="kopje">Health</h1>
+                <div class="chartbox1"> <!--in een extra div gezet om de canvasbreedte en styling aan te passen, zelfde geldt voor de andere canvassen hieronder-->
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+            <div class="column">
+                <h1 class="kopje">Ration <span class="blue">Supply</span></h1> <!--in een span gezet zodat ik de kleur handmatig aan kan passen in de css-->
+                <div class="chartbox2">
+                    <canvas id="myChart2"></canvas>
+                </div>
+            </div>
+            <div class="line">
+                <h1 class="kopje">Travel <span class="blue">Distance</span></h1>
+                <div class="chartbox3">
+                    <canvas id="myChart3"></canvas>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

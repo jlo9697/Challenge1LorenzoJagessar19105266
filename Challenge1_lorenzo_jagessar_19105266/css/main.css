@@ -1,0 +1,138 @@
+@font-face{ /*font-family toevoegen omdat deze er niet standaard in zit*/
+    font-family: Poppins;
+    src: url(../fonts/Poppins-Bold.ttf);
+}
+
+html{
+    font-family: Poppins;
+}
+
+body{
+    margin: 0;
+    background-image: url(../pictures/Endless-Constellation-white.svg); /*https://www.svgbackgrounds.com/ - Moest dit doen om deze achtergrond gratis te kunnen gebruiken*/
+}
+
+h1{
+    text-align: center; /*om de logo te centreren*/
+}
+
+/*HEADER AND LOGO*/
+
+header{
+    text-align: center;
+    background-color: #0F1112;
+    grid-area: header;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.logo{ /*ervoor zorgen dat het logo niet tegen de rand aan zit*/
+    padding-top: 15.9px;
+    padding-bottom: 15.9px;
+}
+
+/*DOUGNUTGRAFIEK*/
+.ring{
+    grid-area: ring; /*benaming voor de grid te maken*/
+}
+
+/*KOLOMGRAFIEK*/
+.column{
+    grid-area: kolom; /*benaming voor de grid te maken*/
+}
+
+/*LINEGRAFIEK*/
+.line{
+    grid-area: lijn; /*benaming voor de grid te maken*/
+}
+
+/*BLAUW TEKST*/
+.blue{
+    color: #005288; /*om specifieke woorden een andere kleur te geven*/
+}
+
+canvas{
+    background-color: #EEEEEE;
+}
+
+.chartbox1,.chartbox2,.chartbox3{
+    width: 80%; /*in procenten zodat het mooi meeschaalt*/
+    margin-left: auto;
+    margin-right: auto;
+    /*beide marges auto gebruikt zodat het netjes in het midden blijft zitten*/
+}
+
+.chartbox3{
+    padding-bottom: 26px;
+}
+
+/*MOBILE VIEW*/
+@media only screen and (min-width:0px){
+    /*GRID MOBILE VIEW*/
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 1fr 1fr  1fr;
+        grid-template-areas: 
+            "header"
+            "ring"
+            "kolom"
+            "lijn"
+        ;
+    }
+
+}
+
+
+
+/*TABLET VIEW*/
+@media only screen and (min-width: 768px){
+    .container{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.1fr 0.2fr 1fr;
+        grid-template-areas: 
+            "header header header header header header"
+            "ring ring ring kolom kolom kolom"
+            "lijn lijn lijn lijn lijn lijn"
+        ;
+    }
+    .ring,.column{
+        margin-top: 191px; /*marge zodat deze niet tegen de header aankomt*/
+    }
+
+    .line{
+        margin-top: 49px;
+    }
+
+    .chartbox1,.chartbox2{
+        width: 80%;
+    }
+
+    .chartbox3{
+        width: 90%; /*iets groter dan de andere twee grafieken zodat deze mooi lijnt met de andere twee grafieken*/
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 100px;
+    }
+}
+
+/*DESKTOP VIEW*/
+@media only screen and (min-width:1024px){
+    .container{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.1fr 1fr;
+        grid-template-areas: 
+            "header header header header header header header header header"
+            "ring ring ring kolom kolom kolom lijn lijn lijn"
+        ;
+    }
+    .ring,.column,.line{
+        margin-top: 191px;
+    }
+
+    .chartbox1,.chartbox2,.chartbox3{
+        width: 90%; /*hier kunnen alle drie de grafieken iets groter vanwege de vergrootte schermbreedte*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
